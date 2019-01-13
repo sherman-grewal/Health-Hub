@@ -19,6 +19,9 @@ class Firebase {
 
     doctors = () => this.db.ref('doctors');
 
+    logs = () => this.db.ref('logs');
+
+
     patientsOfDoctor = (id="") =>
         this.db.ref('doctors/doctor');
 

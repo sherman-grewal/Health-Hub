@@ -28,16 +28,22 @@ class Notifications extends React.Component {
         this.url = "https://mentalhealthhelper-fb52e.firebaseio.com/doctors/doctor/p1.json";
     }
 
-    showNotif(pat) {
-        const entries = pat.journal.entry;
-        this.setState({
-            msg: "Patient 1 feels 3"
-        })
-        this.notify("tr")
+    showNotif(val) {
+        for (let i in val) {
+            console.log(val[i]);
+            const mood = parseInt(val[i].mood);
+            if (mood < 4) {
+                this.setState({
+                    msg: "Alert, user 1 has a mood of " + mood
+                });
+                this.notify("tr");
+            }
+            // const entries = val.journal.entry;
+        }
     }
 
     componentDidMount() {
-        this.props.firebase.patient1().on('value', snapshot => {
+        this.props.firebase.logs().on('value', snapshot => {
             this.showNotif(snapshot.val());
         });
     }
