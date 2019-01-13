@@ -231,7 +231,11 @@ const dashboardPanelChart = {
         {
           type: 'time',
           time: {
-            unit: 'month'
+            unit: 'day',
+              displayFormats:{
+              day:
+                  'MMM D'
+               }
           },
           gridLines: {
             display: false,
