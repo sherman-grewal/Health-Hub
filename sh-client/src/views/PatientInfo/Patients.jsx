@@ -1,24 +1,28 @@
 import React from "react";
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
-
-import { PanelHeader } from "../../components";
-
+import { PanelHeader, Button } from "../../components";
 import users from "../../variables/users";
+import PatientInfo from './PatientInfo'
 
-class Patients extends React.Component {
+
+
+export class Patients extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
+    
     return (
       <div>
+        
         <PanelHeader size="sm" />
         <div className="content">
           <Row>
             <Col md={12}>
               <Card>
                 <CardHeader>
-                  <h5 className="title"> Your users </h5>
-                  <p className="category">
-                    Handcrafted by our friends from{" "}
-                  </p>
+                  <h5 className="title"> Your Patients </h5>
                 </CardHeader>
                 <CardBody className="all-icons">
                   <Row>
@@ -35,6 +39,15 @@ class Patients extends React.Component {
                           <div className="font-icon-detail">
                             <i className={"now-ui-icons " + "users_single-02"} />
                             <p>{user.name}</p>
+                            <Button
+                              color="Black"
+                              block
+                              
+                              href = "/user-info"
+                              
+                            >
+                              More Info
+                            </Button>
                           </div>
                         </Col>
                       );

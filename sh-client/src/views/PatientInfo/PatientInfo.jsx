@@ -1,5 +1,7 @@
 import React from "react";
 import { Card, CardHeader, CardBody, Row, Col, CardTitle, Table } from "reactstrap";
+import Patients from './Patients';
+
 
 import { PanelHeader, FormInputs, CardAuthor, CardSocials } from "../../components";
 import { Line, Bar } from "react-chartjs-2";
@@ -7,7 +9,11 @@ import userBackground from "../../assets/img/bg5.jpg";
 import userAvatar from "../../assets/img/mike.jpg";
 import {dashboardPanelChart, dashboard24HoursPerformanceChart} from "../../variables/charts";
 
-class PatientInfo extends React.Component {
+const info = {
+  name: "Sherman"
+}
+
+export class PatientInfo extends React.Component {
   render() {
     return (
       <div>
@@ -31,7 +37,11 @@ class PatientInfo extends React.Component {
                   <CardAuthor
                     avatar={userAvatar}
                     avatarAlt="..."
-                    title="Mike Andrew"
+                    //THIS IS WHERE I REPLACE THE NAME
+                    //title = {this.props.patient.name}
+                    //title= {info.name}
+                    title = {Patients.name}
+                    //-------------
                     description="michael23"
                   />
                   {/*<p className="description text-center">*/}

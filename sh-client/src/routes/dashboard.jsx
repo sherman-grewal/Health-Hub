@@ -1,6 +1,6 @@
 import Dashboard from "../views/Dashboard/Dashboard.jsx";
 import Notifications from "../views/Notifications/Notifications.jsx";
-import Icons from "../views/Patients/Patients.jsx";
+import Icons from "../views/PatientInfo/Patients.jsx";
 import Typography from "../views/Typography/Typography.jsx";
 import TableList from "../views/TableList/TableList.jsx";
 import Upgrade from "../views/Upgrade/Upgrade.jsx";
@@ -34,18 +34,19 @@ var dashRoutes = [
         icon: "users_single-02",
         component: UserPage
     },
-    {
+    /*{
         path: "/extended-tables",
         name: "Table List",
         icon: "files_paper",
         component: TableList
-    },
-    {
+    },*/
+    /*{
         path: "/typography",
         name: "Typography",
         icon: "design-2_ruler-pencil",
         component: Typography
-    },
+    },*/
+
     // {
     //     pro: true,
     //     path: "/upgrade",
