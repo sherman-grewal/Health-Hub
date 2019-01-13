@@ -5,7 +5,7 @@ import { PanelHeader } from "../../components";
 
 import icons from "../../variables/icons";
 
-class Icons extends React.Component {
+class Patients extends React.Component {
   render() {
     return (
       <div>
@@ -51,4 +51,4 @@ class Icons extends React.Component {
   }
 }
 
-export default Icons;
+export default Patients;
