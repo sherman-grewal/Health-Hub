@@ -1,6 +1,5 @@
 import React from "react";
 import { Card, CardHeader, CardBody, Row, Col, CardTitle, Table } from "reactstrap";
-import Patients from './Patients';
 
 
 import { PanelHeader, FormInputs, CardAuthor, CardSocials } from "../../components";
@@ -13,7 +12,11 @@ const info = {
   name: "Sherman"
 }
 
-export class PatientInfo extends React.Component {
+class PatientInfo extends React.Component {
+  constructor() {
+    super();
+  }
+
   render() {
     return (
       <div>
@@ -39,8 +42,6 @@ export class PatientInfo extends React.Component {
                     avatarAlt="..."
                     //THIS IS WHERE I REPLACE THE NAME
                     //title = {this.props.patient.name}
-                    //title= {info.name}
-                    title = {Patients.name}
                     //-------------
                     description="michael23"
                   />
@@ -80,41 +81,35 @@ export class PatientInfo extends React.Component {
                   <Table responsive>
                     <thead className=" text-primary">
                       <tr>
-                        <th>Name</th>
-                        <th>Date Started</th>
-                        <th>Date Ended</th>
+                        <th>Medication Name</th>
+                        <th>Description</th>
                         <th className="text-right">Dosage</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Dakota</td>
-                        <td>Niger</td>
-                        <td>Oud-Turnhout</td>
+                        <td>Allergy Pills</td>
+                        <td>After taking this I felt very drowsy and I was upset</td>
                         <td className="text-right">36,738mpg</td>
                       </tr>
                       <tr>
                         <td>Minerva</td>
                         <td>Curaçao</td>
-                        <td>Sinaai-Waas</td>
                         <td className="text-right">23,789mpg</td>
                       </tr>
                       <tr>
                         <td>Sage</td>
                         <td>Netherlands</td>
-                        <td>Baileux</td>
                         <td className="text-right">56,142mpg</td>
                       </tr>
                       <tr>
                         <td>Greene</td>
                         <td>Malawi</td>
-                        <td>Feldkirchen in Kärnten</td>
                         <td className="text-right">63,542mpg</td>
                       </tr>
                       <tr>
                         <td>Porter</td>
                         <td>Chile</td>
-                        <td>Gloucester</td>
                         <td className="text-right">78,615mpg</td>
                       </tr>
                     </tbody>

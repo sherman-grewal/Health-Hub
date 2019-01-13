@@ -14,12 +14,6 @@ var dashRoutes = [
         icon: "users_single-02",
         component: Icons
     },
-    // {
-    //     path: "/patient-info",
-    //     name: "Patient Info",
-    //     icon: "users_single-02",
-    //     component: PatientInfo
-    // },
     {
         path: "/doctor-profile",
         name: "Doctor Profile",
@@ -58,6 +52,13 @@ var dashRoutes = [
     //     icon: "objects_spaceship",
     //     component: Upgrade
     // },
+    { // basically hidden lol
+        path: "/patient-info",
+        // name: "Patient Info",
+        // icon: "users_single-02",
+        component: PatientInfo,
+        hidden: true
+    },
     {redirect: true, path: "/", pathTo: "/patients", name: "Patients"}
 ];
 export default dashRoutes;
