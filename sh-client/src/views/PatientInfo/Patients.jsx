@@ -7,6 +7,7 @@ import {
     Redirect
 } from 'react-router-dom';
 import PatientInfo from './PatientInfo'
+import {FirebaseContext, withFirebase} from '../../variables/firebase';
 
 
 export class Patients extends React.Component {
@@ -16,6 +17,18 @@ export class Patients extends React.Component {
             redirect: false
         }
     }
+
+     componentDidMount() {
+         this.setState({loading: true});
+
+         this.props.firebase.users().on('value', snapshot => {
+             console.log(snapshot.val())
+             this.setState({
+                 users: snapshot.val(),
+                 loading: false,
+             });
+         });
+     }
 
     setRedirect = (id) => {
         this.setState({
@@ -35,6 +48,21 @@ export class Patients extends React.Component {
         return (
             <div>
                 <PanelHeader size="sm"/>
+
+                <FirebaseContext.Consumer>
+                    {
+                        firebase => {
+                            // firebase.db.ref('users/' + 5).set({
+                            //     name: "fsafdsfdsfa",
+                            //     email: "fdsfadsfd@faefsfsd.com",
+                            // });
+                            firebase.addUser();
+                            console.log(firebase.users())
+                            // return <div onClick={() => firebase.addDoctor("aasdfa", "esafsf")}>I've access to Firebase
+                            //     and render something.</div>;
+                        }}
+                </FirebaseContext.Consumer>
+
                 <div className="content">
                     <Row>
                         <Col md={12}>
@@ -58,7 +86,7 @@ export class Patients extends React.Component {
                                                     {/*<Link style={{"text-decoration": "none", "color":""}} to={'/patient-info/' + user.id}>*/}
                                                     <div onClick={() => this.setRedirect(user.id)}
                                                          className="font-icon-detail"
-                                                        style={{ "cursor": "pointer" }}
+                                                         style={{"cursor": "pointer"}}
                                                     >
                                                         <i className={"now-ui-icons " + "users_single-02"}/>
                                                         <p>{user.name}</p>
@@ -78,4 +106,4 @@ export class Patients extends React.Component {
     }
 }
 
-export default Patients;
+export default withFirebase(Patients);
