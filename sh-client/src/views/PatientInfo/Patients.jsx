@@ -21,11 +21,10 @@ export class Patients extends React.Component {
 
     getPatients(resp) {
         console.log(resp)
-        let patients = resp.patients;
+        let patients = resp;
         this.setState((prevstate) => ({
-            patients: [...prevstate.patients, patients[0].p1, patients[1].p2]
+            patients: [...prevstate.patients, patients.p1, patients.p2]
         }));
-
     }
 
     setRedirect = (id) => {
