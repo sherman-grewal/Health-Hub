@@ -8,12 +8,23 @@ import UserPage from "../views/UserPage/UserPage.jsx";
 import PatientInfo from "../views/PatientInfo/PatientInfo.jsx";
 
 var dashRoutes = [
-    {path: "/patients", name: "Patients", icon: "design_image", component: Icons},
     {
-        path: "/user-info",
-        name: "Patient Info",
+        path: "/patients",
+        name: "Patients",
         icon: "users_single-02",
-        component: PatientInfo
+        component: Icons
+    },
+    // {
+    //     path: "/patient-info",
+    //     name: "Patient Info",
+    //     icon: "users_single-02",
+    //     component: PatientInfo
+    // },
+    {
+        path: "/doctor-profile",
+        name: "Doctor Profile",
+        icon: "business_badge",
+        component: UserPage
     },
     {
         path: "/dashboard",
@@ -21,18 +32,11 @@ var dashRoutes = [
         icon: "design_app",
         component: Dashboard
     },
-
     {
         path: "/notifications",
         name: "Notifications",
         icon: "ui-1_bell-53",
         component: Notifications
-    },
-    {
-        path: "/user-page",
-        name: "User Profile",
-        icon: "users_single-02",
-        component: UserPage
     },
     /*{
         path: "/extended-tables",
