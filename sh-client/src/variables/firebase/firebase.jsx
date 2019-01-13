@@ -17,35 +17,39 @@ class Firebase {
         this.db = app.database();
     }
 
-
     doctors = () => this.db.ref('Doctors');
 
-    patientsOfDoctor = (email="lovelaceada@msncom") =>
+    patientsOfDoctor = (email = "lovelaceada@msncom") =>
         this.db.ref('Doctors/' + email);
 
+    addDoctor = (doctor) =>
+        this.db.ref('doctors').push({
+            doctor
+        });
 
-    users = (uid) => this.db.ref('users');
+
+    // users = (uid) => this.db.ref('users');
 
     // doctor = (email) => this.db.ref('doctors').
 
-    addDoctor = () => (name, email) => {
-        return this.db.ref('doctors/' + 15).set(
-            {
-                name: name,
-                email: email
-            }
-        )
-    };
+    // addDoctor = () => (name, email) => {
+    //     return this.db.ref('doctors/' + 15).set(
+    //         {
+    //             name: name,
+    //             email: email
+    //         }
+    //     )
+    // };
 
-    addUser = () => this.db.ref('users').push({
-        name: "Samf",
-        email: "ddd@faefsfsd.com",
-    });
+    // addUser = () => this.db.ref('users').push({
+    //     name: "Samf",
+    //     email: "ddd@faefsfsd.com",
+    // });
 
 
-    addPatientEntry = (n, extra, date) => {
-        // this.db().ref('/doctos')
-    }
+    // addPatientEntry = (n, extra, date) => {
+    //     // this.db().ref('/doctos')
+    // }
 }
 
 export default Firebase;

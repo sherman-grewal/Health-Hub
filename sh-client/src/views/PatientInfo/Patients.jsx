@@ -1,6 +1,6 @@
 import React from "react";
 import {Card, CardHeader, CardBody, Row, Col} from "reactstrap";
-import {PanelHeader, Button} from "../../components";
+import {PanelHeader, Notifications} from "../../components";
 import _ from 'lodash';
 import users from "../../variables/users";
 import {
@@ -98,6 +98,7 @@ export class Patients extends React.Component {
                         </Col>
                     </Row>
                 </div>
+                       <Notifications msg={"helloooo"}/>
             </div>
         );
     }
