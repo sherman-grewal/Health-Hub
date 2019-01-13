@@ -35,7 +35,7 @@ class Sidebar extends React.Component {
       <div className="sidebar" data-color="blue">
         <div className="logo">
           <a
-            href="https://www.creative-tim.com"
+            href="#"
             className="simple-text logo-mini"
           >
             <div className="logo-img">
@@ -43,7 +43,7 @@ class Sidebar extends React.Component {
             </div>
           </a>
           <a
-            href="https://www.creative-tim.com"
+            href="#"
             className="simple-text logo-normal"
           >
             Health App
