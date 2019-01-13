@@ -20,12 +20,12 @@ var dashRoutes = [
         icon: "business_badge",
         component: UserPage
     },
-    {
-        path: "/dashboard",
-        name: "Dashboard",
-        icon: "design_app",
-        component: Dashboard
-    },
+    // {
+    //     path: "/dashboard",
+    //     name: "Dashboard",
+    //     icon: "design_app",
+    //     component: Dashboard
+    // },
     {
         path: "/notifications",
         name: "Notifications",

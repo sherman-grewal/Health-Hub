@@ -14,18 +14,22 @@ class Firebase {
     constructor() {
         const app = firebase.initializeApp(config);
 
-        // this.auth = app.auth();
         this.db = app.database();
     }
 
 
-    users = (uid) => this.db.ref('users').limitToLast(100);
+    doctors = () => this.db.ref('Doctors');
 
-    doctors = () => this.db.ref('mentalhealthhelper-fb52e');
+    patientsOfDoctor = (email="lovelaceada@msncom") =>
+        this.db.ref('Doctors/' + email);
+
+
+    users = (uid) => this.db.ref('users');
+
+    // doctor = (email) => this.db.ref('doctors').
 
     addDoctor = () => (name, email) => {
-        console.log('');
-        this.db.ref('doctors/' + 15).set(
+        return this.db.ref('doctors/' + 15).set(
             {
                 name: name,
                 email: email

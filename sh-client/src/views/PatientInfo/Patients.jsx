@@ -1,12 +1,12 @@
 import React from "react";
 import {Card, CardHeader, CardBody, Row, Col} from "reactstrap";
 import {PanelHeader, Button} from "../../components";
+import _ from 'lodash';
 import users from "../../variables/users";
 import {
     Link,
     Redirect
 } from 'react-router-dom';
-import PatientInfo from './PatientInfo'
 import {FirebaseContext, withFirebase} from '../../variables/firebase';
 
 
@@ -14,21 +14,17 @@ export class Patients extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            redirect: false
+            redirect: false,
+            patients: []
         }
     }
 
-     componentDidMount() {
-         this.setState({loading: true});
-
-         this.props.firebase.users().on('value', snapshot => {
-             console.log(snapshot.val())
-             this.setState({
-                 users: snapshot.val(),
-                 loading: false,
-             });
-         });
-     }
+    getUsers(doctor){
+        console.log(doctor.Patients);
+        this.setState((prevstate) => ({
+            patients: [...prevstate.patients, doctor.Patients]
+        }));
+    }
 
     setRedirect = (id) => {
         this.setState({
@@ -43,8 +39,16 @@ export class Patients extends React.Component {
         }
     };
 
-    render() {
+    componentDidMount() {
+        this.setState({loading: true});
 
+        this.props.firebase.patientsOfDoctor().on('value', snapshot => {
+            this.getUsers(snapshot.val());
+        });
+    }
+
+
+    render() {
         return (
             <div>
                 <PanelHeader size="sm"/>
@@ -52,14 +56,7 @@ export class Patients extends React.Component {
                 <FirebaseContext.Consumer>
                     {
                         firebase => {
-                            // firebase.db.ref('users/' + 5).set({
-                            //     name: "fsafdsfdsfa",
-                            //     email: "fdsfadsfd@faefsfsd.com",
-                            // });
-                            firebase.addUser();
-                            console.log(firebase.users())
-                            // return <div onClick={() => firebase.addDoctor("aasdfa", "esafsf")}>I've access to Firebase
-                            //     and render something.</div>;
+                            // firebase.addUser();
                         }}
                 </FirebaseContext.Consumer>
 
@@ -73,7 +70,7 @@ export class Patients extends React.Component {
                                 <CardBody className="all-icons">
                                     <Row>
                                         {this.renderRedirect()}
-                                        {users.map((user, i) => {
+                                        {this.state.patients.map((user, i) => {
                                             return (
                                                 <Col
                                                     lg={2}
@@ -89,7 +86,7 @@ export class Patients extends React.Component {
                                                          style={{"cursor": "pointer"}}
                                                     >
                                                         <i className={"now-ui-icons " + "users_single-02"}/>
-                                                        <p>{user.name}</p>
+                                                        <p>{user["Email Addresses"]}</p>
                                                     </div>
                                                     {/*</Link>*/}
                                                 </Col>

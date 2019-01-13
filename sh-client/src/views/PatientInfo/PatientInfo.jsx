@@ -15,6 +15,16 @@ const info = {
 class PatientInfo extends React.Component {
     constructor() {
         super();
+        this.state = {
+            patientId: null,
+            patient: null
+        }
+    }
+
+    componentDidMount() {
+        this.setState({
+            patientId: this.props.match.params.id
+        })
     }
 
 
