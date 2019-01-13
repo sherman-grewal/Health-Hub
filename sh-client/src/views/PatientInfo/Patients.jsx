@@ -19,11 +19,13 @@ export class Patients extends React.Component {
         }
     }
 
-    getUsers(doctor){
-        console.log(doctor.Patients);
+    getPatients(resp) {
+        console.log(resp)
+        let patients = resp.patients;
         this.setState((prevstate) => ({
-            patients: [...prevstate.patients, doctor.Patients]
+            patients: [...prevstate.patients, patients[0].p1, patients[1].p2]
         }));
+
     }
 
     setRedirect = (id) => {
@@ -43,7 +45,7 @@ export class Patients extends React.Component {
         this.setState({loading: true});
 
         this.props.firebase.patientsOfDoctor().on('value', snapshot => {
-            this.getUsers(snapshot.val());
+            this.getPatients(snapshot.val());
         });
     }
 
@@ -86,7 +88,7 @@ export class Patients extends React.Component {
                                                          style={{"cursor": "pointer"}}
                                                     >
                                                         <i className={"now-ui-icons " + "users_single-02"}/>
-                                                        <p>{user["Email Addresses"]}</p>
+                                                        <p>{user.name}</p>
                                                     </div>
                                                     {/*</Link>*/}
                                                 </Col>
@@ -98,7 +100,6 @@ export class Patients extends React.Component {
                         </Col>
                     </Row>
                 </div>
-                       <Notifications msg={"helloooo"}/>
             </div>
         );
     }

@@ -17,10 +17,16 @@ class Firebase {
         this.db = app.database();
     }
 
-    doctors = () => this.db.ref('Doctors');
+    doctors = () => this.db.ref('doctors');
 
-    patientsOfDoctor = (email = "lovelaceada@msncom") =>
-        this.db.ref('Doctors/' + email);
+    patientsOfDoctor = (id="") =>
+        this.db.ref('doctors/doctor');
+
+    patient1 = () =>
+        this.db.ref('doctors/doctor/p1');
+
+    dpatients = (id) =>
+        this.db.ref('doctors/doctor/patients');
 
     addDoctor = (doctor) =>
         this.db.ref('doctors').push({

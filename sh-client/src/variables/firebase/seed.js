@@ -15,6 +15,7 @@ const med2 = {
 }
 
 const patient1 = {
+    id: 1,
     name: 'Alex Martin',
     address: '200 University Ave W',
     meds: [med1, med2],
@@ -61,6 +62,7 @@ const patient1 = {
 }
 
 const patient2 = {
+    id: 2,
     name: 'John Doe',
     address: '203 Lester St.',
     meds: [med1, med2],
@@ -111,23 +113,37 @@ const patient2 = {
 
 }
 
-const doctor1 = {
+const doctor = {
     name: 'Bob Sam',
     address: '2200 Eglinton Ave W',
     city: 'Mississauga',
     province: 'Ontario',
     email: 'first.last@gmail.com',
-    patients: [patient1, patient2]
+    // patients: [patient1, patient2]
 }
 
-const url = "https://mentalhealthhelper-fb52e.firebaseio.com/.json";
 
-axios.put(url, {
-    doctors: [doctor1]
+
+const url = "https://mentalhealthhelper-fb52e.firebaseio.com";
+
+axios.put(url + "/doctors.json", {
+    doctor
 })
     .then((res) => {
     console.log(`statusCode: ${res.statusCode}`)
-    console.log(res)
+    console.log(res.data)
+})
+    .catch((error) => {
+        console.error(error)
+    });
+
+axios.put(url + "/doctors/doctor.json", {
+    "p1": patient1,
+    "p2": patient2
+})
+    .then((res) => {
+    console.log(`statusCode: ${res.statusCode}`)
+    console.log(res.data)
 })
     .catch((error) => {
         console.error(error)

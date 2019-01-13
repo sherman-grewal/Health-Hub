@@ -4,7 +4,7 @@ import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 import { PanelHeader, FormInputs, CardAuthor, CardSocials,Notifications } from "../../components";
 
 import userBackground from "../../assets/img/bg5.jpg";
-import userAvatar from "../../assets/img/mike.jpg";
+import userAvatar from "../../assets/img/mike2.jpg";
 
 class User extends React.Component {
   render() {
@@ -13,10 +13,11 @@ class User extends React.Component {
         <PanelHeader size="sm" />
         <div className="content">
           <Row>
-            <Col >
+            <Col>
               <Card className="card-user">
                 <div className="image">
-                  <img src={userBackground} alt="..." />
+
+                  {/*<img src={userBackground} alt="..." />*/}
                 </div>
                 <CardBody>
                   <CardAuthor

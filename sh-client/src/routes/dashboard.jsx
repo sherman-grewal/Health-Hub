@@ -26,12 +26,12 @@ var dashRoutes = [
     //     icon: "design_app",
     //     component: Dashboard
     // },
-    {
-        path: "/notifications",
-        name: "Notifications",
-        icon: "ui-1_bell-53",
-        component: Notifications
-    },
+    // {
+    //     path: "/notifications",
+    //     name: "Notifications",
+    //     icon: "ui-1_bell-53",
+    //     component: Notifications
+    // },
     /*{
         path: "/extended-tables",
         name: "Table List",
@@ -53,7 +53,7 @@ var dashRoutes = [
     //     component: Upgrade
     // },
     { // basically hidden lol
-        path: "/patient-info",
+        path: "/patient-info/:id",
         // name: "Patient Info",
         // icon: "users_single-02",
         component: PatientInfo,

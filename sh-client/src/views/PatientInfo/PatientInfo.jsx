@@ -1,16 +1,12 @@
 import React from "react";
 import {Card, CardHeader, CardBody, Row, Col, CardTitle, Table} from "reactstrap";
 
-import {FirebaseContext} from '../../variables/firebase';
+import {FirebaseContext, withFirebase} from '../../variables/firebase';
 import {PanelHeader, FormInputs, CardAuthor, CardSocials} from "../../components";
 import {Line, Bar} from "react-chartjs-2";
 import userBackground from "../../assets/img/bg5.jpg";
-import userAvatar from "../../assets/img/mike.jpg";
+import userAvatar from "../../assets/img/ryan.jpg";
 import {dashboardPanelChart, dashboard24HoursPerformanceChart} from "../../variables/charts";
-
-const info = {
-    name: "Sherman"
-}
 
 class PatientInfo extends React.Component {
     constructor() {
@@ -21,12 +17,28 @@ class PatientInfo extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.setState({
-            patientId: this.props.match.params.id
-        })
+    getUserInfo(patients) {
+        for (const p of patients) {
+            if (p.id === this.state.patientId) {
+                this.setState({
+                    patient: p
+                });
+                return;
+            }
+        }
     }
 
+    componentDidMount() {
+        const patientId = parseInt(this.props.match.params.id);
+
+        this.setState({
+            patientId: patientId,
+        });
+
+        this.props.firebase.patientsOfDoctor().on('value', snapshot => {
+            // this.getUserInfo(snapshot.val());
+        });
+    }
 
     render() {
         return (
@@ -135,4 +147,4 @@ class PatientInfo extends React.Component {
     }
 }
 
-export default PatientInfo;
+export default withFirebase(PatientInfo);
