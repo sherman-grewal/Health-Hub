@@ -3,7 +3,6 @@ import Notifications from "../views/Notifications/Notifications.jsx";
 import Icons from "../views/Patients/Patients.jsx";
 import Typography from "../views/Typography/Typography.jsx";
 import TableList from "../views/TableList/TableList.jsx";
-import Maps from "../views/Maps/Maps.jsx";
 import Upgrade from "../views/Upgrade/Upgrade.jsx";
 import UserPage from "../views/UserPage/UserPage.jsx";
 
@@ -15,7 +14,6 @@ var dashRoutes = [
     component: Dashboard
   },
   { path: "/patients", name: "Patients", icon: "design_image", component: Icons },
-  { path: "/maps", name: "Maps", icon: "location_map-big", component: Maps },
   {
     path: "/notifications",
     name: "Notifications",
