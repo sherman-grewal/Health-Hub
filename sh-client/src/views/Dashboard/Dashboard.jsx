@@ -43,113 +43,6 @@ class Dashboard extends React.Component {
         />
         <div className="content">
           <Row>
-            <Col xs={12} md={4}>
-              <Card className="card-chart">
-                <CardHeader>
-                  <CardCategory>Global Sales</CardCategory>
-                  <CardTitle tag="h4">Shipped Products</CardTitle>
-                  <UncontrolledDropdown>
-                    <DropdownToggle
-                      className="btn-round btn-simple btn-icon"
-                      color="default"
-                    >
-                      <i className="now-ui-icons loader_gear" />
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another Action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem className="text-danger">
-                        Remove data
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                </CardHeader>
-                <CardBody>
-                  <div className="chart-area">
-                    <Line
-                      data={dashboardShippedProductsChart.data}
-                      options={dashboardShippedProductsChart.options}
-                    />
-                  </div>
-                </CardBody>
-                <CardFooter>
-                  <Stats>
-                    {[
-                      {
-                        i: "now-ui-icons arrows-1_refresh-69",
-                        t: "Just Updated"
-                      }
-                    ]}
-                  </Stats>
-                </CardFooter>
-              </Card>
-            </Col>
-            <Col xs={12} md={4}>
-              <Card className="card-chart">
-                <CardHeader>
-                  <CardCategory>2018 Sales</CardCategory>
-                  <CardTitle tag="h4">All products</CardTitle>
-                  <UncontrolledDropdown>
-                    <DropdownToggle
-                      className="btn-round btn-simple btn-icon"
-                      color="default"
-                    >
-                      <i className="now-ui-icons loader_gear" />
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another Action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                      <DropdownItem className="text-danger">
-                        Remove data
-                      </DropdownItem>
-                    </DropdownMenu>
-                  </UncontrolledDropdown>
-                </CardHeader>
-                <CardBody>
-                  <div className="chart-area">
-                    <Line
-                      data={dashboardAllProductsChart.data}
-                      options={dashboardAllProductsChart.options}
-                    />
-                  </div>
-                </CardBody>
-                <CardFooter>
-                  <Stats>
-                    {[
-                      {
-                        i: "now-ui-icons arrows-1_refresh-69",
-                        t: "Just Updated"
-                      }
-                    ]}
-                  </Stats>
-                </CardFooter>
-              </Card>
-            </Col>
-            <Col xs={12} md={4}>
-              <Card className="card-chart">
-                <CardHeader>
-                  <CardCategory>Email Statistics</CardCategory>
-                  <CardTitle tag="h4">24 Hours Performance</CardTitle>
-                </CardHeader>
-                <CardBody>
-                  <div className="chart-area">
-                    <Bar
-                      data={dashboard24HoursPerformanceChart.data}
-                      options={dashboard24HoursPerformanceChart.options}
-                    />
-                  </div>
-                </CardBody>
-                <CardFooter>
-                  <Stats>
-                    {[{ i: "now-ui-icons ui-2_time-alarm", t: "Last 7 days" }]}
-                  </Stats>
-                </CardFooter>
-              </Card>
-            </Col>
-          </Row>
-          <Row>
             <Col xs={12} md={6}>
               <Card className="card-tasks">
                 <CardHeader>
@@ -175,49 +68,49 @@ class Dashboard extends React.Component {
             <Col xs={12} md={6}>
               <Card>
                 <CardHeader>
-                  <CardCategory>All Persons List</CardCategory>
-                  <CardTitle tag="h4">Employees Stats</CardTitle>
+                  {/*<CardCategory>All Persons List</CardCategory>*/}
+                  <CardTitle tag="h4">Medication Stats</CardTitle>
                 </CardHeader>
                 <CardBody>
                   <Table responsive>
                     <thead className=" text-primary">
                       <tr>
                         <th>Name</th>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th className="text-right">Salary</th>
+                        <th>Date Started</th>
+                        <th>Date Ended</th>
+                        <th className="text-right">Dosage</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <td>Dakota Rice</td>
+                        <td>Dakota</td>
                         <td>Niger</td>
                         <td>Oud-Turnhout</td>
-                        <td className="text-right">$36,738</td>
+                        <td className="text-right">36,738mpg</td>
                       </tr>
                       <tr>
-                        <td>Minerva Hooper</td>
+                        <td>Minerva</td>
                         <td>Curaçao</td>
                         <td>Sinaai-Waas</td>
-                        <td className="text-right">$23,789</td>
+                        <td className="text-right">23,789mpg</td>
                       </tr>
                       <tr>
-                        <td>Sage Rodriguez</td>
+                        <td>Sage</td>
                         <td>Netherlands</td>
                         <td>Baileux</td>
-                        <td className="text-right">$56,142</td>
+                        <td className="text-right">56,142mpg</td>
                       </tr>
                       <tr>
-                        <td>Doris Greene</td>
+                        <td>Greene</td>
                         <td>Malawi</td>
                         <td>Feldkirchen in Kärnten</td>
-                        <td className="text-right">$63,542</td>
+                        <td className="text-right">63,542mpg</td>
                       </tr>
                       <tr>
-                        <td>Mason Porter</td>
+                        <td>Porter</td>
                         <td>Chile</td>
                         <td>Gloucester</td>
-                        <td className="text-right">$78,615</td>
+                        <td className="text-right">78,615mpg</td>
                       </tr>
                     </tbody>
                   </Table>
@@ -225,6 +118,114 @@ class Dashboard extends React.Component {
               </Card>
             </Col>
           </Row>
+          {/*<Row>*/}
+            {/*<Col xs={12} md={4}>*/}
+              {/*<Card className="card-chart">*/}
+                {/*<CardHeader>*/}
+                  {/*<CardCategory>Global Sales</CardCategory>*/}
+                  {/*<CardTitle tag="h4">Shipped Products</CardTitle>*/}
+                  {/*<UncontrolledDropdown>*/}
+                    {/*<DropdownToggle*/}
+                      {/*className="btn-round btn-simple btn-icon"*/}
+                      {/*color="default"*/}
+                    {/*>*/}
+                      {/*<i className="now-ui-icons loader_gear" />*/}
+                    {/*</DropdownToggle>*/}
+                    {/*<DropdownMenu right>*/}
+                      {/*<DropdownItem>Action</DropdownItem>*/}
+                      {/*<DropdownItem>Another Action</DropdownItem>*/}
+                      {/*<DropdownItem>Something else here</DropdownItem>*/}
+                      {/*<DropdownItem className="text-danger">*/}
+                        {/*Remove data*/}
+                      {/*</DropdownItem>*/}
+                    {/*</DropdownMenu>*/}
+                  {/*</UncontrolledDropdown>*/}
+                {/*</CardHeader>*/}
+                {/*<CardBody>*/}
+                  {/*<div className="chart-area">*/}
+                    {/*<Line*/}
+                      {/*data={dashboardShippedProductsChart.data}*/}
+                      {/*options={dashboardShippedProductsChart.options}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                {/*</CardBody>*/}
+                {/*<CardFooter>*/}
+                  {/*<Stats>*/}
+                    {/*{[*/}
+                      {/*{*/}
+                        {/*i: "now-ui-icons arrows-1_refresh-69",*/}
+                        {/*t: "Just Updated"*/}
+                      {/*}*/}
+                    {/*]}*/}
+                  {/*</Stats>*/}
+                {/*</CardFooter>*/}
+              {/*</Card>*/}
+            {/*</Col>*/}
+            {/*<Col xs={12} md={4}>*/}
+              {/*<Card className="card-chart">*/}
+                {/*<CardHeader>*/}
+                  {/*<CardCategory>2018 Sales</CardCategory>*/}
+                  {/*<CardTitle tag="h4">All products</CardTitle>*/}
+                  {/*<UncontrolledDropdown>*/}
+                    {/*<DropdownToggle*/}
+                      {/*className="btn-round btn-simple btn-icon"*/}
+                      {/*color="default"*/}
+                    {/*>*/}
+                      {/*<i className="now-ui-icons loader_gear" />*/}
+                    {/*</DropdownToggle>*/}
+                    {/*<DropdownMenu right>*/}
+                      {/*<DropdownItem>Action</DropdownItem>*/}
+                      {/*<DropdownItem>Another Action</DropdownItem>*/}
+                      {/*<DropdownItem>Something else here</DropdownItem>*/}
+                      {/*<DropdownItem className="text-danger">*/}
+                        {/*Remove data*/}
+                      {/*</DropdownItem>*/}
+                    {/*</DropdownMenu>*/}
+                  {/*</UncontrolledDropdown>*/}
+                {/*</CardHeader>*/}
+                {/*<CardBody>*/}
+                  {/*<div className="chart-area">*/}
+                    {/*<Line*/}
+                      {/*data={dashboardAllProductsChart.data}*/}
+                      {/*options={dashboardAllProductsChart.options}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                {/*</CardBody>*/}
+                {/*<CardFooter>*/}
+                  {/*<Stats>*/}
+                    {/*{[*/}
+                      {/*{*/}
+                        {/*i: "now-ui-icons arrows-1_refresh-69",*/}
+                        {/*t: "Just Updated"*/}
+                      {/*}*/}
+                    {/*]}*/}
+                  {/*</Stats>*/}
+                {/*</CardFooter>*/}
+              {/*</Card>*/}
+            {/*</Col>*/}
+            {/*<Col xs={12} md={4}>*/}
+              {/*<Card className="card-chart">*/}
+                {/*<CardHeader>*/}
+                  {/*<CardCategory>Email Statistics</CardCategory>*/}
+                  {/*<CardTitle tag="h4">24 Hours Performance</CardTitle>*/}
+                {/*</CardHeader>*/}
+                {/*<CardBody>*/}
+                  {/*<div className="chart-area">*/}
+                    {/*<Bar*/}
+                      {/*data={dashboard24HoursPerformanceChart.data}*/}
+                      {/*options={dashboard24HoursPerformanceChart.options}*/}
+                    {/*/>*/}
+                  {/*</div>*/}
+                {/*</CardBody>*/}
+                {/*<CardFooter>*/}
+                  {/*<Stats>*/}
+                    {/*{[{ i: "now-ui-icons ui-2_time-alarm", t: "Last 7 days" }]}*/}
+                  {/*</Stats>*/}
+                {/*</CardFooter>*/}
+              {/*</Card>*/}
+            {/*</Col>*/}
+          {/*</Row>*/}
+
         </div>
       </div>
     );

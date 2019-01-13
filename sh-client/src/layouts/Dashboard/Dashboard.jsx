@@ -54,7 +54,7 @@ class Dashboard extends React.Component {
               );
             })}
           </Switch>
-          <Footer fluid />
+          {/*<Footer fluid />*/}
         </div>
       </div>
     );
