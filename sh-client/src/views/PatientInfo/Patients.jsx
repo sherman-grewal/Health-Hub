@@ -2,17 +2,12 @@ import React from "react";
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 import { PanelHeader, Button } from "../../components";
 import users from "../../variables/users";
-import PatientInfo from './PatientInfo'
 
-
-
-export class Patients extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class Patients extends React.Component {
   render() {
-    
+    var client = {
+      name: "Sherman"
+    };
     return (
       <div>
         
@@ -44,7 +39,7 @@ export class Patients extends React.Component {
                               block
                               
                               href = "/user-info"
-                              
+  
                             >
                               More Info
                             </Button>

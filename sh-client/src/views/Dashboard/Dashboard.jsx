@@ -75,7 +75,7 @@ class Dashboard extends React.Component {
                   <Table responsive>
                     <thead className=" text-primary">
                       <tr>
-                        <th>Name</th>
+                        <th>Medication</th>
                         <th>Date Started</th>
                         <th>Date Ended</th>
                         <th className="text-right">Dosage</th>
