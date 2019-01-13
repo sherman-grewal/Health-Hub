@@ -131,37 +131,37 @@ const dashboardPanelChart = {
 
     return {
       labels: [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10",
-        "11",
-        "12",
-        "13",
-        "14",
-        "15",
-        "16",
-        "17",
-        "18",
-        "19",
-        "20",
-        "21",
-        "22",
-        "23",
-        "24",
-        "25",
-        "26",
-        "27",
-        "28",
-        "29",
-        "30",
-        "31",
+        Date.parse("2019-01-01"),
+        Date.parse("2019-01-02"),
+        Date.parse("2019-01-03"),
+        Date.parse("2019-01-04"),
+        Date.parse("2019-01-05"),
+        Date.parse("2019-01-06"),
+        Date.parse("2019-01-07"),
+        Date.parse("2019-01-08"),
+        Date.parse("2019-01-09"),
+        Date.parse("2019-01-10"),
+        Date.parse("2019-01-11"),
+        Date.parse("2019-01-12"),
+        Date.parse("2019-01-13"),
+        Date.parse("2019-01-14"),
+        Date.parse("2019-01-15"),
+        Date.parse("2019-01-16"),
+        Date.parse("2019-01-17"),
+        Date.parse("2019-01-18"),
+        Date.parse("2019-01-19"),
+        Date.parse("2019-01-20"),
+        Date.parse("2019-01-21"),
+        Date.parse("2019-01-22"),
+        Date.parse("2019-01-23"),
+        Date.parse("2019-01-24"),
+        Date.parse("2019-01-25"),
+        Date.parse("2019-01-26"),
+        Date.parse("2019-01-27"),
+        Date.parse("2019-01-28"),
+        Date.parse("2019-01-29"),
+        Date.parse("2019-01-30"),
+        Date.parse("2019-01-31"),
       ],
       datasets: [
         {
@@ -229,6 +229,10 @@ const dashboardPanelChart = {
       ],
       xAxes: [
         {
+          type: 'time',
+          time: {
+            unit: 'month'
+          },
           gridLines: {
             display: false,
             color: "rgba(255,255,255,0.1)"
@@ -236,13 +240,18 @@ const dashboardPanelChart = {
           ticks: {
             padding: 10,
             fontColor: "rgba(255,255,255,0.4)",
-            fontStyle: "bold"
-          }
+            fontStyle: "bold" 
+          } 
         }
       ]
     }
   }
 };
+
+
+
+
+
 
 // ##############################
 // // // Dashboard view - Shipped Products - Card
@@ -443,4 +452,7 @@ module.exports = {
   dashboardShippedProductsChart, // Chart for Dashboard view - Shipped Products Card
   dashboardAllProductsChart, // Chart for Dashboard view - All products Card
   dashboard24HoursPerformanceChart // Chart for Dashboard view - 24 Hours Performance Card
+
+  
 };
+
