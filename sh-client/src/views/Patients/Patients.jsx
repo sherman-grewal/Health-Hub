@@ -3,7 +3,7 @@ import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 
 import { PanelHeader } from "../../components";
 
-import icons from "../../variables/icons";
+import users from "../../variables/users";
 
 class Patients extends React.Component {
   render() {
@@ -15,15 +15,14 @@ class Patients extends React.Component {
             <Col md={12}>
               <Card>
                 <CardHeader>
-                  <h5 className="title">100 Awesome Nucleo Icons</h5>
+                  <h5 className="title"> Your users </h5>
                   <p className="category">
                     Handcrafted by our friends from{" "}
-                    <a href="https://nucleoapp.com/?ref=1712">NucleoApp</a>
                   </p>
                 </CardHeader>
                 <CardBody className="all-icons">
                   <Row>
-                    {icons.map((prop, key) => {
+                    {users.map((user, i) => {
                       return (
                         <Col
                           lg={2}
@@ -31,11 +30,11 @@ class Patients extends React.Component {
                           sm={4}
                           xs={6}
                           className="font-icon-list"
-                          key={key}
+                          key={i}
                         >
                           <div className="font-icon-detail">
-                            <i className={"now-ui-icons " + prop} />
-                            <p>{prop}</p>
+                            <i className={"now-ui-icons " + "users_single-02"} />
+                            <p>{user.name}</p>
                           </div>
                         </Col>
                       );
